@@ -1,0 +1,29 @@
+{
+  "name": "blue-geolocation",
+  "version": "1.0.0",
+  "description": "A web application for geolocation services",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier -w src"
+  },
+  "keywords": [
+    "geolocation",
+    "web",
+    "pwa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "firebase": "^11.8.1",
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "vite": "^6.3.4"
+  }
+}

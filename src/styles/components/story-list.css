@@ -1,0 +1,120 @@
+.stories-list {
+  padding: var(--spacing-unit);
+}
+
+.stories-list h2 {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.stories-list .info-message {
+  text-align: center;
+  padding: calc(var(--spacing-unit) * 2);
+  background: white;
+  border-radius: var(--border-radius);
+  color: #666;
+}
+
+@media (min-width: 768px) {
+  .stories-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-unit);
+  }
+
+  .stories-list h2 {
+    grid-column: 1 / -1;
+  }
+
+  .stories-list .info-message {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Story List Container */
+.story-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+.story-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.story-list__title {
+  font-size: 1.75rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.story-list__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Grid Layout */
+.story-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Empty State */
+.story-list__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.story-list__empty i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.story-list__empty p {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin: 0.5rem 0;
+}
+
+.story-list__empty-subtitle {
+  color: var(--text-secondary) !important;
+  font-size: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Footer */
+.story-list__footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .story-list {
+    padding: 1rem;
+  }
+
+  .story-list__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .story-list__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

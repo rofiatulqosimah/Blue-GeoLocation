@@ -1,0 +1,21 @@
+{
+    "name": "Blue GeoLocation",
+    "short_name": "Blue",
+    "description": "Share your stories with the world and discover amazing places!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a73e8",
+    "theme_color": "#1a73e8",
+    "icons": [
+        {
+            "src": "/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+} 
