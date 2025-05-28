@@ -1,6 +1,7 @@
 import { View } from './View.js';
 import { StoryList } from '../components/StoryList.js';
 import { StoryMap } from '../components/StoryMap.js';
+import { getAllLocations } from '../utils/db.js';
 
 export class StoryListView extends View {
   constructor(containerId) {
@@ -103,7 +104,7 @@ export class StoryListView extends View {
     this.isLoading = false;
   }
 
-  render(stories = []) {
+  async render(stories = []) {
     if (!this.container) {
       console.error('Container not found in StoryListView');
       return;
@@ -122,16 +123,13 @@ export class StoryListView extends View {
         return;
       }
 
-      
       this.allStories = stories;
 
-      
       if (this.mapService) {
         this.mapService.cleanupMiniMaps();
       }
       this.initializedMaps.clear();
 
-      
       const renderedContent = `
         ${this.storyMap.render()}
         ${this.storyList.render(stories, {
@@ -142,15 +140,21 @@ export class StoryListView extends View {
 
       this.container.innerHTML = renderedContent;
 
-      
       if (this.loadMoreHandler) {
         this.storyList.setLoadMoreHandler(this.loadMoreHandler);
       }
       this.storyList.attachEventListeners(this.container);
 
-      
       this.initializeMaps(stories);
     } catch (error) {
+      // Jika gagal (misal offline), ambil data dari IndexedDB
+      getAllLocations().then((offlineStories) => {
+        this.container.innerHTML = this.storyList.render(offlineStories, {
+          showLoadMore: false,
+          isLoading: false,
+        });
+        this.initializeMaps(offlineStories);
+      });
       console.error('Error in StoryListView render:', error);
       this.handleError(error);
     }
