@@ -9,6 +9,7 @@ import { StoryListView } from './views/StoryListView.js';
 import { AddStoryView } from './views/AddStoryView.js';
 import { AuthView } from './views/AuthView.js';
 import { HomeView } from './views/HomeView.js';
+import { NotFoundView } from './views/NotFoundView.js';
 
 import { StoryPresenter } from './presenters/StoryPresenter.js';
 import { AuthPresenter } from './presenters/AuthPresenter.js';
@@ -57,6 +58,7 @@ class App {
     this.storyListView = new StoryListView('content');
     this.addStoryView = new AddStoryView('content');
     this.authView = new AuthView('content');
+    this.notFoundView = new NotFoundView('content');
 
     this.storyListView.setMapService(this.mapService);
 
@@ -147,6 +149,7 @@ class App {
     this.addStoryView.cleanup?.();
     this.authView.cleanup?.();
     this.homeView.cleanup?.();
+    this.notFoundView.cleanup?.();
   }
 
   updateNavigationState() {
@@ -204,6 +207,11 @@ class App {
     this.router.addRoute('/register', () => {
       this.authView.setLoginMode(false);
       this.authView.render();
+    });
+
+    // Add catch-all route for Not Found
+    this.router.addRoute('*', () => {
+      this.notFoundView.render();
     });
 
     const path = this.router.getCurrentPath() || '/home';

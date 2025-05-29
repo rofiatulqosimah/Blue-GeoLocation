@@ -17,5 +17,28 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+    ],
+    "shortcuts": [
+        {
+            "name": "Add New Story",
+            "short_name": "Add Story",
+            "description": "Add a new story to the map",
+            "url": "/add",
+            "icons": [{ "src": "/images/icon-192.png", "sizes": "192x192" }]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshot-desktop.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "platform": "wide"
+        },
+        {
+            "src": "/images/screenshot-mobile.png",
+            "sizes": "750x1334",
+            "type": "image/png",
+            "platform": "narrow"
+        }
     ]
 } 
