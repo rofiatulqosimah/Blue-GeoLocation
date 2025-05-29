@@ -10,6 +10,7 @@
 @import './components/not-found.css';
 @import './components/map.css';
 @import './components/story-map.css';
+@import './components/style.css';
 
 /* Common styles */
 :root {

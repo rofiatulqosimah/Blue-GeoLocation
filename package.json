@@ -24,7 +24,8 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "firebase": "^11.8.1",
     "idb": "^8.0.3",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "workbox-sw": "^7.3.0"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

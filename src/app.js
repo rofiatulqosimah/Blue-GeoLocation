@@ -24,16 +24,16 @@ if ('serviceWorker' in navigator) {
       }
 
       // Register the new service worker
-      const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js', {
+      const registration = await navigator.serviceWorker.register('/sw.js', {
         scope: '/'
       });
-      console.info('Firebase ServiceWorker registration successful:', registration);
+      console.info('ServiceWorker registration successful:', registration);
 
       // Wait for the service worker to be ready
       await navigator.serviceWorker.ready;
       console.info('Service worker is active and ready');
     } catch (err) {
-      console.error('Firebase ServiceWorker registration failed:', err);
+      console.error('ServiceWorker registration failed:', err);
     }
   });
 

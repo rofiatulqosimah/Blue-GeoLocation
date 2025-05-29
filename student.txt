@@ -1,0 +1,38 @@
+Implementasi Workbox pada Service Worker
+
+1. Instalasi Package
+- Package workbox-sw sudah terinstall di package.json
+- Versi yang digunakan: workbox-sw@7.3.0
+
+2. File yang Diubah
+a. public/sw.js (File Baru)
+- Menggunakan Workbox untuk caching
+- Mengimplementasikan berbagai strategi caching:
+  * Google Fonts: StaleWhileRevalidate
+  * Font Files: CacheFirst (1 tahun)
+  * Images: CacheFirst (30 hari)
+  * CSS/JS: StaleWhileRevalidate
+  * HTML: NetworkFirst
+- Tetap mempertahankan fungsionalitas Firebase Messaging
+
+b. src/app.js
+- Mengubah registrasi service worker dari firebase-messaging-sw.js ke sw.js
+- Menghapus service worker lama sebelum registrasi yang baru
+
+3. Strategi Caching yang Digunakan
+- StaleWhileRevalidate: Untuk resource yang sering update (CSS, JS, Google Fonts)
+- CacheFirst: Untuk resource yang jarang berubah (images, font files)
+- NetworkFirst: Untuk HTML yang perlu selalu update
+
+4. Cara Testing
+1. Build dan deploy aplikasi
+2. Buka Chrome DevTools
+3. Buka tab Application
+4. Cek bagian Service Workers untuk memastikan service worker terdaftar
+5. Cek bagian Cache Storage untuk melihat cache yang dibuat
+
+5. Keuntungan Implementasi
+- Caching yang lebih efisien
+- Performa aplikasi lebih baik
+- Offline functionality yang lebih baik
+- Cache management otomatis 
