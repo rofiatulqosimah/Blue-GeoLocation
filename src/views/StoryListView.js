@@ -1,7 +1,7 @@
 import { View } from './View.js';
 import { StoryList } from '../components/StoryList.js';
 import { StoryMap } from '../components/StoryMap.js';
-import { getAllLocations } from '../utils/db.js';
+import { getAllLocations } from '../utils/IndexedDB.js';
 
 export class StoryListView extends View {
   constructor(containerId) {

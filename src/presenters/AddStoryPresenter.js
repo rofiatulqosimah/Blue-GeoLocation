@@ -1,6 +1,6 @@
 import { LocationService } from '../services/LocationService.js';
 import { MapService } from '../services/MapService.js';
-import { saveLocation } from '../utils/db.js';
+import { saveLocation } from '../utils/IndexedDB.js';
 
 export class AddStoryPresenter {
   constructor(view, storyModel) {
