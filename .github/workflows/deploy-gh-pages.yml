@@ -27,8 +27,8 @@ jobs:
         uses: actions/checkout@v4
 
       # Build step (uncomment if needed)
-      # - name: Build project
-      #   run: npm install && npm run build
+      - name: Build project
+        run: npm install && npm run build
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
